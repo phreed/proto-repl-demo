@@ -8,11 +8,14 @@
 ;; and selecting Proto Repl: Autoeval File
 
 ;; Uncomment this line. It should be immediately evaluated
-(comment
+(def evaluate?
+  identity) ; comment)
+
+(evaluate?
  (+ 2 3))
 
 ;; Uncomment me
-(comment
+(evaluate?
  (for [n (range 10)]
    (* 2 n)))
 
@@ -20,7 +23,7 @@
 ;; See https://github.com/jasongilman/proto-repl-charts
 
 ;; Uncomment me
-(comment
+(evaluate?
  (prc/line-chart
   "Trigonometry"
   {"sin" (map #(Math/sin %) (range 0.0 6.0 0.2))
